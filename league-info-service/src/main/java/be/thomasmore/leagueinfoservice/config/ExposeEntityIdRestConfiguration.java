@@ -1,6 +1,6 @@
-package be.thomasmore.myFootballDatabase.footballinfoservice.config;
+package be.thomasmore.leagueinfoservice.config;
 
-import be.thomasmore.myFootballDatabase.footballinfoservice.entity.League;
+import be.thomasmore.leagueinfoservice.entity.League;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;

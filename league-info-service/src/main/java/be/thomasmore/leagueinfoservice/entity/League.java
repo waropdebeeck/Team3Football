@@ -1,4 +1,4 @@
-package be.thomasmore.myFootballDatabase.footballinfoservice.entity;
+package be.thomasmore.leagueinfoservice.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -32,6 +32,9 @@ public class League {
     private String season;
 
     @Column(name="season_start")
+    private String season_start;
+
+    @Column(name="season_end")
     private String season_end;
 
     @Column(name="logo")
