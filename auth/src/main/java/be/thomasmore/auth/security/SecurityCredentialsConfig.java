@@ -34,13 +34,11 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
 
 
     @Autowired
-
     private JwtConfig jwtConfig;
 
 
 
     @Override
-
     protected void configure(HttpSecurity http) throws Exception {
 
         http
@@ -92,7 +90,6 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
     // In addition, we need to define the password encoder also. So, auth manager can compare and verify passwords.
 
     @Override
-
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
 
         auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
@@ -102,7 +99,6 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
 
 
     @Bean
-
     public JwtConfig jwtConfig() {
 
         return new JwtConfig();
@@ -112,7 +108,6 @@ public class SecurityCredentialsConfig extends WebSecurityConfigurerAdapter {
 
 
     @Bean
-
     public BCryptPasswordEncoder passwordEncoder() {
 
         return new BCryptPasswordEncoder();

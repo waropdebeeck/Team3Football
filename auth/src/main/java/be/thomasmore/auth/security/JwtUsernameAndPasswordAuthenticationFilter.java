@@ -69,7 +69,6 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
 
 
     @Override
-
     public Authentication attemptAuthentication(HttpServletRequest request, HttpServletResponse response)
 
             throws AuthenticationException {
@@ -115,7 +114,6 @@ public class JwtUsernameAndPasswordAuthenticationFilter extends UsernamePassword
     // The 'auth' passed to successfulAuthentication() is the current authenticated user.
 
     @Override
-
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain,
 
                                             Authentication auth) throws IOException, ServletException {
