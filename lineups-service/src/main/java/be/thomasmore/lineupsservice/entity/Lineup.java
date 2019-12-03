@@ -1,15 +1,9 @@
-package be.thomasmore.leagueinfoservice.entity;
-
-import lombok.Data;
-import lombok.NoArgsConstructor;
+package be.thomasmore.lineupsservice.entity;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Table(name="lineup")
-@Data
-@NoArgsConstructor
 public class Lineup {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
