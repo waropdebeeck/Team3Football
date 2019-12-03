@@ -1,6 +1,6 @@
 package be.thomasmore.standingsservice.config;
 
-import be.thomasmore.standingsservice.entity.League;
+import be.thomasmore.standingsservice.entity.Standings;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
