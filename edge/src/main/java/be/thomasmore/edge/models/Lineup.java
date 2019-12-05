@@ -8,7 +8,7 @@ import lombok.Data;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Lineup {
-    private int id;
+    private int lineup_id;
     private int team_id;
     private int player_id;
     private String player;
@@ -18,12 +18,12 @@ public class Lineup {
     public Lineup() {
     }
 
-    public int getId() {
-        return id;
+    public int getLineup_id() {
+        return lineup_id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setLineup_id(int lineup_id) {
+        this.lineup_id = lineup_id;
     }
 
     public int getTeam_id() {
