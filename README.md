@@ -87,9 +87,9 @@ authenticatiefilters.
 URLS
 
 
-###Known Issues
+##Known Issues
 
-Wij maken gebruik van elephantsql en gebruiker hierbij het tinyturtle plan.
+*Wij maken gebruik van elephantsql en gebruiker hierbij het tinyturtle plan.
 Het probeleem Hierbij is dat een service meerdere connecties aanmaakt en dit 
 zorgt ervoor dat we geen queries meer kunnen uitvoeren.
-Midas van Herck is uit het team (en dit te laat laten weten)gestapt waardoor onze workload omhoog is gegaan.
+*Midas van Herck is uit het team (en dit te laat laten weten)gestapt waardoor onze workload omhoog is gegaan.
