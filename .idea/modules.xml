@@ -2,15 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-<<<<<<< HEAD
-      <module fileurl="file://$PROJECT_DIR$/lineups-service/LineupsService.iml" filepath="$PROJECT_DIR$/lineups-service/LineupsService.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/Team3Football.iml" filepath="$PROJECT_DIR$/.idea/Team3Football.iml" />
-      <module fileurl="file://$PROJECT_DIR$/auth/auth.iml" filepath="$PROJECT_DIR$/auth/auth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/edge/edge.iml" filepath="$PROJECT_DIR$/edge/edge.iml" />
-      <module fileurl="file://$PROJECT_DIR$/zuul/zuul.iml" filepath="$PROJECT_DIR$/zuul/zuul.iml" />
-=======
-      <module fileurl="file://$PROJECT_DIR$/.idea/Team3Football.iml" filepath="$PROJECT_DIR$/.idea/Team3Football.iml" />
->>>>>>> 8ab5d1b0c5bb32b8a7cce0919f0cf0874055c25d
     </modules>
   </component>
 </project>

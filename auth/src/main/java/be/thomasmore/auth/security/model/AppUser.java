@@ -1,6 +1,17 @@
 package be.thomasmore.auth.security.model;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.Data;
+import javax.annotation.sql.DataSourceDefinition;
+
+@Data
+@Document(collection="appUser")
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AppUser {
+    @Id
     private Integer id;
 
     private String username, password;
