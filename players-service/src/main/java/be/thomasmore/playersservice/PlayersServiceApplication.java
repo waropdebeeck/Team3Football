@@ -1,4 +1,4 @@
-package be.thomasmore.PlayersService;
+package be.thomasmore.playersService;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
