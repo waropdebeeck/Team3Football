@@ -27,6 +27,7 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
 
     protected void configure(HttpSecurity http) throws Exception {
         http
+
                 .csrf().disable()
 
                 // make sure we use stateless session; session won't be used to store user's state.
@@ -35,27 +36,33 @@ public class SecurityTokenConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 // handle an authorized attempts
 
-                .exceptionHandling().authenticationEntryPoint((req, rsp, e) -> rsp.sendError(HttpServletResponse.SC_UNAUTHORIZED))
+                .exceptionHandling().authenticationEntryPoint((request, response, e) -> {
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            response.setContentType("application/json");
+            response.setCharacterEncoding("UTF-8");
+            response.getWriter().write(String.format("{\"message\": \"%s\"}", e.getMessage()));
+        })
                 .and()
                 // Add a filter to validate the tokens with every request
-
                 .addFilterAfter(new JwtTokenAuthenticationFilter(jwtConfig), UsernamePasswordAuthenticationFilter.class)
 
+                .authorizeRequests()
                 // authorization requests config
 
-                .authorizeRequests()
+
 
                 // allow all who are accessing "auth" service
 
                 .antMatchers(HttpMethod.POST, jwtConfig.getUri()).permitAll()
 
                 // must be an admin if trying to access admin area (authentication is also required here)
-
-                .antMatchers("/gallery" + "/admin/**").hasRole("ADMIN")
+                .antMatchers(HttpMethod.POST, "/auth/**").permitAll()
+                .antMatchers(HttpMethod.POST, "/auth/users/create").permitAll()
 
                 // Any other request must be authenticated
 
-                .anyRequest().authenticated();
+                .anyRequest().permitAll();
+
 
     }
 
