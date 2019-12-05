@@ -6,7 +6,7 @@
 * [Front-end](#Front-end)
 * [Back-end](#Back-end)
 * [Team Team3Football](#Teamleden)
-* [Screenshots van endpoints uit Swagger](#Screenshots-Swagger)
+* [Screenshots Swagger](#Screenshots-Swagger)
 * [Known issues] (#Known-Issues)
 
 ## Over Team3Football
@@ -87,8 +87,9 @@ authenticatiefilters.
 URLS
 
 
-##Known-Issues
-*Wij maken gebruik van elephantsql en gebruiker hierbij het tinyturtle plan.
+###Known Issues
+
+Wij maken gebruik van elephantsql en gebruiker hierbij het tinyturtle plan.
 Het probeleem Hierbij is dat een service meerdere connecties aanmaakt en dit 
 zorgt ervoor dat we geen queries meer kunnen uitvoeren.
-*Midas van Herck is uit het team (en dit te laat laten weten)gestapt waardoor onze workload omhoog is gegaan.
+Midas van Herck is uit het team (en dit te laat laten weten)gestapt waardoor onze workload omhoog is gegaan.
