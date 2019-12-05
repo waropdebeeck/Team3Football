@@ -12,5 +12,3 @@ public class ExposeEntityIdRestConfiguration implements RepositoryRestConfigurer
         config.exposeIdsFor(Lineup.class);
     }
 }
-
-
