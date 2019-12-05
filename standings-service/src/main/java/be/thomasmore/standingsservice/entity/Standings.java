@@ -19,10 +19,10 @@ public class Standings {
     @Column(name="team_id")
     private int team_id;
 
-    @Colum(name="rank")
+    @Column(name="rank")
     private int rank;
 
-    @Column(name"teamName")
+    @Column(name="teamName")
     private String teamName;
 
     @Column(name="logo")
