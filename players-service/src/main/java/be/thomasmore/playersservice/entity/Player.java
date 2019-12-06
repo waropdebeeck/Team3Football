@@ -1,19 +1,29 @@
 package be.thomasmore.playersservice.entity;
 
-
 import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.*;
 
-
+@Entity
+@Table(name="player")
 @Data
-@Document(collection= "player")
+@NoArgsConstructor
 public class Player {
     @Id
-    private String id;
-    private String naam;
-    private Integer number;
-    private String pos;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name="id")
+    private int player_id;
 
+    @Column(name="team_id")
+    private int team_id;
+
+    @Column(name="name")
+    private String name;
+
+    @Column(name="number")
+    private int number;
+
+    @Column(name="age")
+    private int age;
 }
