@@ -1,52 +1,68 @@
 package be.thomasmore.edge.models;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+@Data
+@ApiModel(description="Model van Player.")
 public class Player {
-    private int player_id;
-    private int team_id;
-    private String name;
-    private int number;
-    private String age;
+    @ApiModelProperty(notes="Het id van Player")
+    private
+    String id;
+    @ApiModelProperty(notes="De naam van Player")
+    private
+    String naam;
+    @ApiModelProperty(notes="De leeftijd van Player")
+    private
+    Integer number;
+    @ApiModelProperty(notes="De positie van Player")
+    private
+    String pos;
+
 
     public Player() {
     }
 
-    public int getPlayer_id() {
-        return player_id;
+    public Player(String id, String naam, Integer number, String pos) {
+        this.id = id;
+        this.naam = naam;
+        this.number = number;
+        this.pos = pos;
+
     }
 
-    public void setPlayer_id(int player_id) {
-        this.player_id = player_id;
+    public String getId() {
+        return id;
     }
 
-    public int getTeam_id() {
-        return team_id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setTeam_id(int team_id) {
-        this.team_id = team_id;
+    public String getNaam() {
+        return naam;
     }
 
-    public String getName() {
-        return name;
+    public void setNaam(String naam) {
+        this.naam = naam;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getNumber() {
+    public Integer getNumber() {
         return number;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(Integer number) {
         this.number = number;
     }
 
-    public String getAge() {
-        return age;
+    public String getPos() {
+        return pos;
     }
 
-    public void setAge(String age) {
-        this.age = age;
+    public void setPos(String pos) {
+        this.pos = pos;
     }
+
+
 }

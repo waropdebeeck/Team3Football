@@ -1,33 +1,18 @@
 package be.thomasmore.lineupsservice.entity;
 
 import lombok.Data;
-import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
 
-import javax.persistence.*;
+import java.util.List;
 
-
-@Entity
-@Table(name="lineup")
 @Data
-@NoArgsConstructor
+@Document(collection = "lineup")
 public class Lineup {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int lineup_id;
+    private String id;
+    private String naam;
+    private Integer userId;
+    private List<String> playerId;
+    }
 
-    @Column(name = "team_id")
-    private int team_id;
-
-    @Column(name = "player_id")
-    private int player_id;
-
-    @Column(name = "player")
-    private String player;
-
-    @Column(name = "number")
-    private int number;
-
-    @Column(name = "pos")
-    private String pos;
-}

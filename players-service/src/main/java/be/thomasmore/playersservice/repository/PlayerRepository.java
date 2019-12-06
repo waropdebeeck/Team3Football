@@ -1,16 +1,14 @@
 package be.thomasmore.playersservice.repository;
 
 import be.thomasmore.playersservice.entity.Player;
-import org.springframework.data.jpa.repository.JpaRepository;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 
 @CrossOrigin
-public interface PlayerRepository extends JpaRepository<Player, Integer>{
+public interface PlayerRepository extends MongoRepository<Player, Integer> {
     List<Player> findAll();
-
-    List<Player> findPlayersByAge(int age);
-
-    List<Player> findPlayersByNumber(@Param("number") int number);
+    Player findPlayerById(@Param("Id")String Id);
 }

@@ -1,34 +1,39 @@
 package be.thomasmore.edge.models;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+
+@Data
+@ApiModel(description="Model van Team.")
 public class Team {
-    private int team_id;
-    private int number_of_players;
-    private String name;
+    @ApiModelProperty(notes="Het id van Team")
+    private
+    String id;
+    @ApiModelProperty(notes="De naam van Team")
+    private
+    String naam;
 
     public Team() {
     }
-
-    public int getTeam_id() {
-        return team_id;
+    public Team(String id, String naam) {
+        this.id = id;
+        this.naam = naam;
     }
 
-    public void setTeam_id(int team_id) {
-        this.team_id = team_id;
+    public String getId() {
+        return id;
     }
 
-    public int getNumber_of_players() {
-        return number_of_players;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public void setNumber_of_players(int number_of_players) {
-        this.number_of_players = number_of_players;
+    public String getNaam() {
+        return naam;
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+    public void setNaam(String naam) {
+        this.naam = naam;
     }
 }

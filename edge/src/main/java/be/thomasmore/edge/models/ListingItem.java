@@ -4,9 +4,9 @@ import lombok.Data;
 
 @Data
 public class ListingItem {
-    private Integer player_id;
-    private Integer team_id;
-    private String player;
+    private Integer playerId;
+    private Integer teamId;
+    private Player player;
     private String pos;
     private Integer number;
 }
