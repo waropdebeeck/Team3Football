@@ -17,8 +17,8 @@ Het is een applicatie ontwikkeld in spring en angular.
 ## Inhoud
 
 * 3 microservices met:
-  * één mongoDB service
-  * twee postgreSQL services
+  * drie mongoDB service
+  * twee postgreSQL services ( elephant sql problemen)
 * Eureka server
 * Edge service met GET, POST, PUT, DELETE endpoints
 * Edge service gedocumenteerd met SwaggerUI
