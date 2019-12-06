@@ -16,12 +16,12 @@ public class Lineup {
     @ApiModelProperty(notes="De naam van Lineup")
     private String naam;
     @ApiModelProperty(notes="Het playerId van Lineup ")
-    private List<Player> playerId;
+    private List<String> playerId;
 
     public Lineup() {
     }
 
-    public Lineup(String id, String naam, List<Player> playerId) {
+    public Lineup(String id, String naam, List<String> playerId) {
         Id = id;
         this.naam = naam;
         this.playerId = playerId;
@@ -43,11 +43,11 @@ public class Lineup {
         this.naam = naam;
     }
 
-    public List<Player> getPlayerId() {
+    public List<String> getPlayerId() {
         return playerId;
     }
 
-    public void setPlayerId(List<Player> playerId) {
+    public void setPlayerId(List<String> playerId) {
         this.playerId = playerId;
     }
 }

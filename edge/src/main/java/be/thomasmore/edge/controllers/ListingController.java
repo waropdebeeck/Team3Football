@@ -45,6 +45,34 @@ public class ListingController {
         return lineups;
     }
 
+    @ApiOperation(value="Haal alle lineups op", response = Lineup.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Lineups succesvol opgehaald"),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Unauthorized"),
+            @ApiResponse(code = 404, message = "Source not found")
+    })
+    @GetMapping("/lineupPlayers")
+    public List<LineupPlayers> getAllLineupsPlayers() {
+        GenericResponseWrapper wrapper = restTemplate.getForObject("http://lineup-service/lineups", GenericResponseWrapper.class);
+
+        List<Lineup> lineups = objectMapper.convertValue(wrapper.get_embedded().get("lineups"), new TypeReference<List<Lineup>>() { });
+        List<LineupPlayers> returnList = new ArrayList<>();
+        List<Player> players = new ArrayList<>();
+
+        for(Lineup lineup : lineups){
+
+            for(String playerId: lineup.getPlayerId()){
+                Player player =this.getPlayerById(playerId);
+                players.add(player);
+            }
+        }
+
+
+       // return new LineupPlayers(players);
+        return null;
+    }
+
     @ApiOperation(value="Haal het lineups op Id", response = Lineup.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "Lineup werd succesvol opgehaald"),
@@ -53,9 +81,22 @@ public class ListingController {
             @ApiResponse(code = 404, message = "Source not found")
     })
     @GetMapping("/lineups/{id}")
-    public Lineup getLineupByUserId(@ApiParam(value = "Het userId van Lineup", required = true)@PathVariable Integer id) {
+    public Lineup getLineupByUserId(@ApiParam(value = "Het userId van Lineup", required = true)@PathVariable String id) {
 
-        return restTemplate.getForObject("http:/lineup-service/lineups/search/findLineupByUserId?userId=" + id, Lineup.class);
+        return restTemplate.getForObject("http:/lineup-service/lineups/search/findLineupById?Id=" + id, Lineup.class);
+    }
+
+    @ApiOperation(value="Haal het players op Id", response = Lineup.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "Player werd succesvol opgehaald"),
+            @ApiResponse(code = 401, message = "Unauthorized"),
+            @ApiResponse(code = 403, message = "Unauthorized"),
+            @ApiResponse(code = 404, message = "Source not found")
+    })
+    @GetMapping("/players/{id}")
+    public Player getPlayerById(@ApiParam(value = "Het userId van Lineup", required = true)@PathVariable String id) {
+
+        return restTemplate.getForObject("http:/lineup-service/lineups/search/findLineupById?Id=" + id, Player.class);
     }
 
     @ApiOperation(value="Het lineup aanpassen gegeven id")
