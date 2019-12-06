@@ -84,7 +84,7 @@ authenticatiefilters.
 
 ## Screenshots Swagger
 
-URLS
+![swagger](https://github.com/waropdebeeck/Team3Football/blob/master/Images/Swagger.JPG)
 ## Known Issues
 
 *Wij maken gebruik van elephantsql en gebruiker hierbij het tinyturtle plan.
